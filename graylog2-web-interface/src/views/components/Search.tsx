@@ -105,9 +105,6 @@ const _refreshSearch = (executionState: SearchExecutionState) => {
   });
 };
 
-const SearchBarWithStatus = WithSearchStatus(SearchBar);
-const DashboardSearchBarWithStatus = WithSearchStatus(DashboardSearchBar);
-
 const ViewAdditionalContextProvider = ({ children }: { children: React.ReactNode }) => {
   const { view } = useStore(ViewStore);
   const { searchesClusterConfig } = useStore(SearchConfigStore) ?? {};
@@ -189,10 +186,10 @@ const Search = () => {
                               <IfInteractive>
                                 <HeaderElements />
                                 <IfDashboard>
-                                  {!editingWidget && <DashboardSearchBarWithStatus />}
+                                  {!editingWidget && <DashboardSearchBar />}
                                 </IfDashboard>
                                 <IfSearch>
-                                  <SearchBarWithStatus />
+                                  <SearchBar />
                                 </IfSearch>
 
                                 <QueryBarElements />

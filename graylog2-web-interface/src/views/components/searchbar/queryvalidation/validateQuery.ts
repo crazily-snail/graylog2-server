@@ -27,10 +27,10 @@ import { onSubmittingTimerange } from 'views/components/TimerangeForForm';
 
 export type ValidationQuery = {
   queryString: ElasticsearchQueryString | string,
-  timeRange: TimeRange | undefined,
+  timeRange?: TimeRange | undefined,
   streams?: Array<string>,
-  parameters: Immutable.Set<Parameter>,
-  parameterBindings: ParameterBindings,
+  parameters?: Immutable.Set<Parameter>,
+  parameterBindings?: ParameterBindings,
   filter?: ElasticsearchQueryString | string,
 }
 
